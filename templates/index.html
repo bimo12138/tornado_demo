@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">订单</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">订户</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">报刊目录</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent" >
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div>
+                <button type="submit" class="btn btn-primary btn-lg" style="float: right; margin: 10px 10px 10px;" data-toggle="modal" data-target="#add_order">添加信息</button>
+            </div>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">订单号</th>
+                        <th scope="col">日期</th>
+                        <th scope="col">报刊代号</th>
+                        <th scope="col">起订期</th>
+                        <th scope="col">终订期</th>
+                        <th scope="col">份数</th>
+                        <th scope="col">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm">修改</button>
+                        <button class="btn btn-danger btn-sm">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>@fat</td>
+                    <td>@fat</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm">修改</button>
+                        <button class="btn btn-danger btn-sm">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                    <td>@twitter</td>
+                    <td>@twitter</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm">修改</button>
+                        <button class="btn btn-danger btn-sm">删除</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div>
+                <button type="submit" class="btn btn-primary btn-lg" style="float: right; margin: 10px 10px 10px;" data-toggle="modal" data-target="#add_orderer">添加订户</button>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">编号</th>
+                    <th scope="col">用户</th>
+                    <th scope="col">住址</th>
+                    <th scope="col">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm">修改</button>
+                        <button class="btn btn-danger btn-sm">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+
+                    <td>
+                        <button class="btn btn-primary btn-sm">修改</button>
+                        <button class="btn btn-danger btn-sm">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry the Bird</td>
+                    <td>@twitter</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm">修改</button>
+                        <button class="btn btn-danger btn-sm">删除</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+        </div>
+    </div>
+
+<div class="modal fade" id="add_order" tabindex="-1" role="dialog" aria-labelledby="order_title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>添加订单</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    <label for="order_id">订单号</label>
+                    <input type="text" id="order_id" required class="form-control" placeholder="请输入订单号: ">
+                    <label for="order_date">日期</label>
+                    <input type="datetime-local" id="order_date" required class="form-control" placeholder="请输入日期: ">
+                    <label for="order_paper_id">报刊编号</label>
+                    <input type="text" id="order_paper_id" required class="form-control" placeholder="请输入报刊编号: ">
+                    <label for="order_start_date">起订日期</label>
+                    <input type="datetime-local" id="order_start_date" required class="form-control" placeholder="请输入开始日期: ">
+                    <label for="order_end_date">结束日期</label>
+                    <input type="datetime-local" id="order_end_date" required class="form-control" placeholder="请输入结束日期: ">
+                    <label for="order_number">份数</label>
+                    <input type="number" id="order_number" required class="form-control" placeholder="请输入份数">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
